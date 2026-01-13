@@ -38,23 +38,23 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans selection:bg-brand-500/30">
+    <div className="min-h-screen bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans selection:bg-sky-500/30">
 
       {/* Navigation / Header */}
-      <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 dark:bg-slate-900/70 border-b border-slate-200/50 dark:border-slate-800/50">
+      <nav className="sticky top-0 z-50 bg-white dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-300 dark:border-slate-800/50 shadow-sm dark:shadow-none">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-brand-600 dark:bg-brand-500 rounded-lg flex items-center justify-center shadow-lg shadow-brand-500/20">
+            <div className="w-8 h-8 bg-sky-600 dark:bg-sky-500 rounded-lg flex items-center justify-center shadow-lg shadow-sky-500/20">
               <span className="text-white font-bold text-lg">H</span>
             </div>
-            <span className="text-xl font-bold tracking-tight">HabitOS</span>
+            <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">HabitOS</span>
           </div>
 
           <div className="flex items-center gap-4">
             <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
             <button
               onClick={() => setShowForm(!showForm)}
-              className="flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg font-semibold transition-all shadow-md shadow-brand-500/20 active:translate-y-0.5"
+              className="flex items-center gap-2 bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-lg font-semibold transition-all shadow-md shadow-sky-500/20 active:translate-y-0.5"
             >
               <Plus size={18} />
               <span>New Habit</span>
@@ -69,19 +69,19 @@ function App() {
         {summary && (
           <section className="mb-10 grid grid-cols-1 md:grid-cols-3 gap-4">
             <StatCard
-              icon={<LayoutDashboard size={20} className="text-brand-500" />}
+              icon={<LayoutDashboard size={20} className="text-sky-600 dark:text-sky-500" />}
               label="Total Habits"
               value={summary.total_habits}
               subtext="Active routines"
             />
             <StatCard
-              icon={<CheckCircle2 size={20} className="text-emerald-500" />}
+              icon={<CheckCircle2 size={20} className="text-emerald-600 dark:text-emerald-500" />}
               label="Avg Success Rate"
               value={`${Math.round(summary.avg_success_probability * 100)}%`}
               subtext="Daily completion probability"
             />
             <StatCard
-              icon={<AlertCircle size={20} className="text-amber-500" />}
+              icon={<AlertCircle size={20} className="text-amber-600 dark:text-amber-500" />}
               label="At Risk"
               value={summary.at_risk.length}
               subtext="Need attention"
@@ -92,19 +92,19 @@ function App() {
 
         {/* Create Form */}
         {showForm && (
-          <div className="mb-10 p-1 bg-gradient-to-br from-brand-500 via-purple-500 to-pink-500 rounded-2xl shadow-xl shadow-brand-500/10 animate-in fade-in zoom-in-95 duration-200">
+          <div className="mb-10 p-1 bg-gradient-to-br from-sky-500 via-purple-500 to-pink-500 rounded-2xl shadow-xl shadow-sky-500/10 animate-in fade-in zoom-in-95 duration-200">
             <form onSubmit={handleSubmit} className="bg-white dark:bg-slate-800 p-6 rounded-xl">
-              <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                <Plus size={20} className="text-brand-500" /> Create New Routine
+              <h2 className="text-lg font-bold mb-4 flex items-center gap-2 text-slate-900 dark:text-white">
+                <Plus size={20} className="text-sky-600 dark:text-sky-500" /> Create New Routine
               </h2>
               <div className="grid gap-4">
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Title</label>
+                  <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">Title</label>
                   <input
                     type="text"
                     value={newHabit.title}
                     onChange={e => setNewHabit({ ...newHabit, title: e.target.value })}
-                    className="w-full p-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none transition-all placeholder:text-slate-400"
+                    className="w-full p-3 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-sky-500 outline-none transition-all placeholder:text-slate-400 text-slate-900 dark:text-white font-medium"
                     placeholder="e.g. Deep Work Session"
                     required
                     autoFocus
@@ -114,13 +114,13 @@ function App() {
                   <button
                     type="button"
                     onClick={() => setShowForm(false)}
-                    className="px-4 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg font-medium transition-colors"
+                    className="px-4 py-2 text-slate-700 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg font-medium transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="px-6 py-2 bg-brand-600 text-white rounded-lg font-bold hover:bg-brand-700 transition-colors shadow-lg shadow-brand-500/30"
+                    className="px-6 py-2 bg-sky-600 text-white rounded-lg font-bold hover:bg-sky-700 transition-colors shadow-lg shadow-sky-500/30"
                   >
                     Launch Routine
                   </button>
@@ -133,8 +133,8 @@ function App() {
         {/* Habit Grid */}
         <section>
           <div className="flex items-center gap-2 mb-6">
-            <Activity className="text-brand-500" size={24} />
-            <h2 className="text-2xl font-bold">Your System</h2>
+            <Activity className="text-sky-600 dark:text-sky-500" size={24} />
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Your System</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -143,17 +143,17 @@ function App() {
             ))}
 
             {habits.length === 0 && (
-              <div className="col-span-full py-32 text-center rounded-3xl border-2 border-dashed border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 mb-4">
-                  <Plus size={32} className="text-slate-400" />
+              <div className="col-span-full py-32 text-center rounded-3xl border-2 border-dashed border-slate-300 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-200 dark:bg-slate-800 mb-4">
+                  <Plus size={32} className="text-slate-500 dark:text-slate-400" />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">No habits active</h3>
-                <p className="text-slate-500 dark:text-slate-400 mt-1 max-w-sm mx-auto">
+                <p className="text-slate-600 dark:text-slate-400 mt-1 max-w-sm mx-auto">
                   "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
                 </p>
                 <button
                   onClick={() => setShowForm(true)}
-                  className="mt-6 text-brand-600 dark:text-brand-400 font-bold hover:underline"
+                  className="mt-6 text-sky-600 dark:text-sky-400 font-bold hover:underline"
                 >
                   Start your first habit
                 </button>
@@ -170,11 +170,11 @@ function App() {
 function StatCard({ icon, label, value, subtext, highlight }) {
   return (
     <div className={`p-6 rounded-2xl border transition-all duration-300 ${highlight
-        ? 'bg-amber-50 dark:bg-amber-900/10 border-amber-200 dark:border-amber-900/30'
-        : 'bg-white dark:bg-slate-800 border-slate-100 dark:border-slate-700/50'
+      ? 'bg-amber-50 dark:bg-amber-900/10 border-amber-200 dark:border-amber-900/30'
+      : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700/50'
       } shadow-sm hover:shadow-md`}>
       <div className="flex items-start justify-between mb-4">
-        <div className={`p-2 rounded-lg ${highlight ? 'bg-amber-100 dark:bg-amber-900/30' : 'bg-slate-50 dark:bg-slate-700/50'
+        <div className={`p-2 rounded-lg ${highlight ? 'bg-amber-100 dark:bg-amber-900/30' : 'bg-slate-100 dark:bg-slate-700/50'
           }`}>
           {icon}
         </div>
@@ -182,8 +182,8 @@ function StatCard({ icon, label, value, subtext, highlight }) {
       </div>
       <div className="flex flex-col">
         <span className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">{value}</span>
-        <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mt-1">{label}</span>
-        <span className="text-xs text-slate-400 dark:text-slate-500 mt-2">{subtext}</span>
+        <span className="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wide mt-1">{label}</span>
+        <span className="text-xs text-slate-500 dark:text-slate-500 mt-2 font-medium">{subtext}</span>
       </div>
     </div>
   )

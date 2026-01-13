@@ -56,15 +56,15 @@ export function HabitCard({ habit, onUpdate }) {
     const history = insight?.history || [];
 
     return (
-        <div className="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700/50 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300">
+        <div className="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700/50 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300">
             {/* Top Row: Title & Probability Badge */}
             <div className="flex justify-between items-start mb-4">
                 <div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
                         {habit.title}
                     </h3>
-                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-2">
-                        <span className="capitalize px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs">
+                    <p className="text-sm font-medium text-slate-600 dark:text-slate-400 mt-1 flex items-center gap-2">
+                        <span className="capitalize px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold">
                             {habit.frequency}
                         </span>
                         {habit.description && <span>• {habit.description}</span>}
@@ -91,7 +91,7 @@ export function HabitCard({ habit, onUpdate }) {
                             ) : (
                                 <Zap size={16} className="text-slate-400 dark:text-slate-500 mt-0.5 shrink-0" />
                             )}
-                            <p className="text-sm text-slate-600 dark:text-slate-300 leading-snug">
+                            <p className="text-sm text-slate-700 dark:text-slate-300 leading-snug font-medium">
                                 {insight.recommendation}
                             </p>
                         </div>
@@ -99,18 +99,18 @@ export function HabitCard({ habit, onUpdate }) {
                 </div>
 
                 {/* VISUALIZATION TOGGLE & AREA */}
-                <div className="bg-slate-50 dark:bg-slate-900/50 rounded-xl p-3 border border-slate-100 dark:border-slate-800">
+                <div className="bg-slate-50 dark:bg-slate-900/50 rounded-xl p-3 border border-slate-200 dark:border-slate-800">
                     <div className="flex justify-end mb-2 gap-2">
                         <button
                             onClick={() => setViewMode('week')}
-                            className={`p-1.5 rounded-md transition-all ${viewMode === 'week' ? 'bg-white dark:bg-slate-800 shadow text-brand-500' : 'text-slate-400 hover:text-slate-600'}`}
+                            className={`p-1.5 rounded-md transition-all ${viewMode === 'week' ? 'bg-white dark:bg-slate-800 shadow text-sky-600 border border-slate-200 dark:border-slate-700' : 'text-slate-400 hover:text-slate-600'}`}
                             title="Week View"
                         >
                             <BarChart2 size={14} />
                         </button>
                         <button
                             onClick={() => setViewMode('calendar')}
-                            className={`p-1.5 rounded-md transition-all ${viewMode === 'calendar' ? 'bg-white dark:bg-slate-800 shadow text-brand-500' : 'text-slate-400 hover:text-slate-600'}`}
+                            className={`p-1.5 rounded-md transition-all ${viewMode === 'calendar' ? 'bg-white dark:bg-slate-800 shadow text-sky-600 border border-slate-200 dark:border-slate-700' : 'text-slate-400 hover:text-slate-600'}`}
                             title="Month Calendar"
                         >
                             <CalendarIcon size={14} />
@@ -130,9 +130,9 @@ export function HabitCard({ habit, onUpdate }) {
             </div>
 
             {/* Bottom: Streak & Action */}
-            <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700/50">
+            <div className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-700/50">
                 <div className="flex flex-col">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">Streak</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-500">Streak</span>
                     <div className="flex items-baseline gap-1">
                         <span className="text-2xl font-black text-slate-900 dark:text-white">
                             {habit.current_streak}
@@ -143,7 +143,7 @@ export function HabitCard({ habit, onUpdate }) {
 
                 <button
                     onClick={handleLog}
-                    className="flex items-center gap-2 bg-slate-900 dark:bg-slate-100 hover:bg-brand-600 dark:hover:bg-white text-white dark:text-slate-900 hover:text-white dark:hover:text-brand-600 px-5 py-2.5 rounded-xl font-bold transition-all active:scale-95 shadow-lg shadow-slate-900/10 dark:shadow-none"
+                    className="flex items-center gap-2 bg-slate-900 dark:bg-slate-100 hover:bg-sky-600 dark:hover:bg-white text-white dark:text-slate-900 hover:text-white dark:hover:text-sky-600 px-5 py-2.5 rounded-xl font-bold transition-all active:scale-95 shadow-lg shadow-slate-900/10 dark:shadow-none"
                 >
                     <CheckCircle size={18} />
                     <span>Done</span>

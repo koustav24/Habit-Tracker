@@ -9,6 +9,7 @@ import {
     addMonths,
     subMonths,
     getDay,
+    addDays,
     startOfWeek,
     endOfWeek
 } from 'date-fns';
@@ -55,18 +56,18 @@ export function HabitCalendar({ logs, color }) {
                     className={`
                     relative h-8 w-8 flex items-center justify-center rounded-lg text-xs font-medium transition-all
                     ${!isCurrentMonth ? "text-slate-300 dark:text-slate-600" : "text-slate-700 dark:text-slate-300"}
-                    ${completed ? `bg-brand-500 text-white font-bold shadow-sm shadow-brand-500/30` : ""}
+                    ${completed ? `bg-sky-500 text-white font-bold shadow-sm shadow-sky-500/30` : ""}
                     ${!completed && isCurrentMonth ? "bg-slate-50 dark:bg-slate-800" : ""}
                 `}
                     key={day}
                 >
                     {formattedDate}
                     {completed && (
-                        <span className="absolute inset-0 rounded-lg ring-1 ring-inset ring-brand-400/20"></span>
+                        <span className="absolute inset-0 rounded-lg ring-1 ring-inset ring-sky-400/20"></span>
                     )}
                 </div>
             );
-            day = require('date-fns').addDays(day, 1);
+            day = addDays(day, 1);
         }
         rows.push(
             <div className="grid grid-cols-7 gap-1.5 mb-1.5" key={day}>

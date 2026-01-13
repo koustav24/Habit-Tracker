@@ -29,8 +29,8 @@ export function ThemeToggle({ theme, toggleTheme }) {
         <button
             onClick={toggleTheme}
             className={`p-2 rounded-full transition-colors duration-200 ${theme === "dark"
-                    ? "bg-slate-800 text-yellow-400 hover:bg-slate-700"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                ? "bg-slate-800 text-yellow-400 hover:bg-slate-700"
+                : "bg-slate-200 text-slate-800 hover:bg-slate-300"
                 }`}
             aria-label="Toggle Theme"
         >
