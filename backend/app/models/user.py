@@ -9,3 +9,4 @@ class User(Base):
     hashed_password = Column(String)
     full_name = Column(String, index=True)
     is_active = Column(Boolean, default=True)
+    goals = Column(String, nullable=True) # JSON or text description of user goals

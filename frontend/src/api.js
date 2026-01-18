@@ -43,3 +43,23 @@ export async function getDashboardSummary() {
     const res = await fetch(`${API_URL}/habits/dashboard/summary`);
     return res.json();
 }
+
+export async function getDailyBriefing() {
+    const res = await fetch(`${API_URL}/assistant/daily-briefing`);
+    if (!res.ok) throw new Error("Failed to fetch briefing");
+    return res.json();
+}
+
+export async function updateUserGoals(goals) {
+    const res = await fetch(`${API_URL}/assistant/onboarding?goals=${encodeURIComponent(goals)}`, {
+        method: "POST"
+    });
+    if (!res.ok) throw new Error("Failed to update goals");
+    return res.json();
+}
+
+export async function getDayPlan() {
+    const res = await fetch(`${API_URL}/assistant/plan`);
+    if (!res.ok) throw new Error("Failed to generate plan");
+    return res.json();
+}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getHabits, createHabit, getDashboardSummary } from './api'
 import { HabitCard } from './components/HabitCard'
+import { AssistantCard } from './components/AssistantCard'
 import { useTheme, ThemeToggle } from './components/ThemeToggle'
 import { LayoutDashboard, Plus, Activity, AlertCircle, CheckCircle2 } from 'lucide-react'
 
@@ -64,6 +65,8 @@ function App() {
       </nav>
 
       <main className="max-w-5xl mx-auto px-6 py-10">
+
+        <AssistantCard />
 
         {/* Dashboard Stats */}
         {summary && (
