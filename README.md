@@ -1,6 +1,9 @@
 # 🧠 HabitOS - The Operating System for Human Discipline
 
 <div align="center">
+
+![HabitOS Logo](https://img.shields.io/badge/HabitOS-v0.1.0-blue? style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEyIDIybDYgLTMuNXYtN2wtNiAtMy41bC02IDMuNXY3bDYgMy41eiI+PC9wYXRoPjxwYXRoIGQ9Ik0xMiAxN2w2IC0zLjV2LTdsLTYgLTMuNSI+PC9wYXRoPjxwYXRoIGQ9Ik0xMiAxMmwtNiAzLjVsLTIuNjI1IC0xLjUiPjwvcGF0aD48cGF0aCBkPSJNMTIgMTJ2NiI+PC9wYXRoPjxwYXRoIGQ9Ik0xMiAxMmw2IC0zLjUiPjwvcGF0aD48L3N2Zz4=)
+
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![React](https://img.shields.io/badge/React-19. 2-61DAFB?style=flat-square&logo=react&logoColor=black)](https://reactjs.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
